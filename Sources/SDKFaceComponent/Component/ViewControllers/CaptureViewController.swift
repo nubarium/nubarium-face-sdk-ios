@@ -172,8 +172,8 @@ public final class CaptureViewController: UIViewController {
         if let onStart { onStart(); return }       // la app cliente intercepta si quiere
         print("SDKFaceComponent: onStart no configurado, continuar al flujo de cámara")
         // Comportamiento por defecto: continuar al flujo de cámara
-       // let camera = CameraViewController()
-       // navigationController?.pushViewController(camera, animated: true)
+        let vc = CameraViewController()
+            navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc private func closeTapped() {
