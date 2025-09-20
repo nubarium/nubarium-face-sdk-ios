@@ -3,39 +3,26 @@ import PackageDescription
 
 let package = Package(
     name: "SDKFaceComponent",
-    defaultLocalization: "en",        // 👈 AÑADE ESTO (o "es" si usas es.lproj)
     platforms: [.iOS(.v13)],
     products: [
-        .library(name: "SDKFaceComponent", targets: ["SDKFaceComponent"])
+        .library(name: "SDKFaceComponent", targets: ["SDKFaceKit"])
     ],
     dependencies: [
-        .package(url: "https://github.com/airbnb/lottie-ios.git", from: "4.0.0"),
-        .package(url: "https://github.com/bustoutsolutions/siesta.git", from: "1.5.0"),
-        .package(url: "https://github.com/Ekhoo/Device.git", from: "3.7.0")
+        .package(url: "https://github.com/airbnb/lottie-ios.git", from: "4.0.0")
     ],
     targets: [
-        .target(
+        .binaryTarget(
             name: "SDKFaceComponent",
-            dependencies: [
-                .product(name: "Lottie", package: "lottie-ios"),
-                .product(name: "Siesta", package: "siesta"),
-                .product(name: "Device", package: "device")
-            ],
-            path: "Sources/SDKFaceComponent",
-            resources: [
-                .process("Resources") // 👈 necesario para que exista Bundle.module
-            ],
-            linkerSettings: [
-                .linkedFramework("AVFoundation"),
-                .linkedFramework("Vision"),
-                .linkedFramework("CoreMedia"),
-                .linkedFramework("QuartzCore"),
-                .linkedFramework("UIKit")
-            ]
+            url: "https://nubarium-sdk-ios.s3.ca-central-1.amazonaws.com/releases/ios/SDKFaceComponent/v1.0.5/SDKFaceComponent.xcframework.zip",
+            checksum: "685b3ac2dd5826d3f68941180e1a7b3641c98d045da18341d91ac2529fc51605"
         ),
-        .testTarget(
-            name: "SDKFaceComponentTests",
-            dependencies: ["SDKFaceComponent"]
+        .target(
+            name: "SDKFaceKit",
+            dependencies: [
+                .target(name: "SDKFaceComponent"),
+                .product(name: "Lottie", package: "lottie-ios")
+            ],
+            path: "Sources/SDKFaceKit"
         )
     ]
 )
