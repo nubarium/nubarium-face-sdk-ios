@@ -54,24 +54,19 @@ import FaceCapture
 
 **Step 2: Add Permissions**
 
-Agrega en tu **Info.plist** la justificación para el uso de la cámara:
+Add to your **Info.plist** the justification for camera usage:
 
 ```xml
 <key>NSCameraUsageDescription</key>
-<string>Usamos la cámara para realizar la captura facial y prueba de vida.</string>
+<string>We use the camera to perform face capture and liveness detection.</string>
 ```
 
-> **Nota:** Si decides guardar la imagen en el carrete, incluye también:
-> ```xml
-> <key>NSPhotoLibraryAddUsageDescription</key>
-> <string>Guardamos la captura facial en tu carrete solo si lo autorizas.</string>
-> ```
 
 ---
 
 ### Before you begin
 - Get the Nubarium Key or API Credentials. It is required to successfully initialize the SDK.
-- The codes in this document are example implementations. Make sure to change the `<NUB_KEY>`, `<NUB_USERNAME>`,  `<NUB_PASSWORD>` and other placeholders as needed.
+- The codes in this document are example implementations. Make sure to change the `<NUB_USERNAME>`,  `<NUB_PASSWORD>` and other placeholders as needed.
 - All the steps in this document are mandatory unless stated otherwise.
 
 ## Initializing the IOS SPM
@@ -160,6 +155,21 @@ It is recommended to use the initialization listener, to detect any fail or save
   - areaImage: A bitmap of the area where the face was framed
 - The `onFail(String reason)` callback method is invoked when the liveness validation failed for the given configuration.
 - The `onError(String error)` callback method is invoked when the component throws an error.
+
+
+### Convert images to base64
+
+The `UIImage` class is overloaded with a utility method that allows you to convert any image into a base64 string.  
+You can use it as follows:
+
+```swift
+let faceBase64 = face.convertImageToBase64String()
+let areaBase64 = area.convertImageToBase64String()
+let frameBase64 = frame.convertImageToBase64String()
+```
+
+This is useful when you need to transmit or store the `face`, `area`, or `frame` images as text.
+
 
 #### Step 5: Start component
 
