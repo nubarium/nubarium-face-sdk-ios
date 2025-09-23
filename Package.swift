@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "SDKFaceComponent",
+    name: "NubariumSDkFace",
     platforms: [
         .iOS(.v13)
     ],
@@ -16,8 +16,8 @@ let package = Package(
     targets: [
          .binaryTarget(
             name: "SDKFaceComponent",
-            url: "https://nubarium-sdk-ios.s3.ca-central-1.amazonaws.com/releases/ios/SDKFaceComponent/067f4b69-74e7-4230-b57c-e34162aee58b/v1.0.11/SDKFaceComponent.xcframework.zip",
-            checksum: "020bc950e75daaba3be41b3a992eb01f1ba82e279c6f4e45b096ea7841c08019"
+            url: "https://nubarium-sdk-ios.s3.ca-central-1.amazonaws.com/releases/ios/SDKFaceComponent/6568ada9-58f7-4a1e-9616-ba8b7d85488d/v1.0.12/SDKFaceComponent.xcframework.zip",
+            checksum: "042b5dbe6064157aeab92e3e2d2c2701754ccfe14f3b08edd76236b77417ebdb"
         ),
         .target(
             name: "FaceCapture",
