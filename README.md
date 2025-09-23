@@ -27,7 +27,6 @@ Guides for integrating the **FaceCapture** SDK (iOS).
 ### Option B — `Package.swift`
 
 ```swift
-// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
