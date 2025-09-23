@@ -16,7 +16,7 @@ let package = Package(
     targets: [
          .binaryTarget(
             name: "SDKFaceComponent",
-            url: "ttps://nubarium-sdk-ios.s3.ca-central-1.amazonaws.com/releases/ios/SDKFaceComponent/2b9fa6e8-86db-4efb-a18f-1130a58749fe/v1.0.10/SDKFaceComponent.xcframework.zip",
+            url: "https://nubarium-sdk-ios.s3.ca-central-1.amazonaws.com/releases/ios/SDKFaceComponent/2b9fa6e8-86db-4efb-a18f-1130a58749fe/v1.0.10/SDKFaceComponent.xcframework.zip",
             checksum: "dbc5598d36909202e0a735f1ffccb2c2d61ac18fed6cc805f98151d30f0af661"
         ),
         .target(
