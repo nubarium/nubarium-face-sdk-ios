@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "NubariumSDkFace",
+    name: "NubariumSDKFace",
     platforms: [
         .iOS(.v13)
     ],
