@@ -1,6 +1,6 @@
 # Biometric SDK for IOS
 Guides for integrating the **FaceCapture** SDK (iOS).
-[![GitHub Release](https://badgen.net/badge/release/v1.0.10/cyan)]()  
+[![GitHub Release](https://badgen.net/badge/release/v1.0.13/cyan)]()  
 
 
 ## SDK compatibility
@@ -21,7 +21,7 @@ Guides for integrating the **FaceCapture** SDK (iOS).
 ```
     https://github.com/nubarium/nubarium-face-sdk-ios.git
 ```
-3. Choose the latest stable version (e.g. `from: 1.0.10`).
+3. Choose the latest stable version (e.g. `from: 1.0.13`).
 4. Add the product **FaceCapture** to your app target and finish.
 
 ### Option B — `Package.swift`
@@ -33,7 +33,7 @@ let package = Package(
  name: "YourApp",
  platforms: [.iOS(.v13)],
  dependencies: [
-     .package(url: "https://github.com/nubarium/nubarium-face-sdk-ios.git", from: "1.0.10")
+     .package(url: "https://github.com/nubarium/nubarium-face-sdk-ios.git", from: "1.0.13")
  ],
  targets: [
      .target(
