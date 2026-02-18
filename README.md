@@ -1,6 +1,6 @@
 # Biometric SDK for IOS
 Guides for integrating the **FaceCapture** SDK (iOS).
-[![GitHub Release](https://badgen.net/badge/release/v1.0.13/cyan)]()  
+[![GitHub Release](https://badgen.net/badge/release/v1.0.15/cyan)]()  
 
 
 ## SDK compatibility
@@ -21,7 +21,7 @@ Guides for integrating the **FaceCapture** SDK (iOS).
 ```
     https://github.com/nubarium/nubarium-face-sdk-ios.git
 ```
-3. Choose the latest stable version (e.g. `from: 1.0.13`).
+3. Choose the latest stable version (e.g. `from: 1.0.15`).
 4. Add the product **FaceCapture** to your app target and finish.
 
 ### Option B — `Package.swift`
@@ -33,7 +33,7 @@ let package = Package(
  name: "YourApp",
  platforms: [.iOS(.v13)],
  dependencies: [
-     .package(url: "https://github.com/nubarium/nubarium-face-sdk-ios.git", from: "1.0.13")
+     .package(url: "https://github.com/nubarium/nubarium-face-sdk-ios.git", from: "1.0.15")
  ],
  targets: [
      .target(
@@ -170,7 +170,25 @@ let frameBase64 = frame.convertImageToBase64String()
 This is useful when you need to transmit or store the `face`, `area`, or `frame` images as text.
 
 
-#### Step 5: Start component
+#### Step 5: Force UI Language (optional)
+
+By default the SDK follows the device locale. You can override it by setting the `language` property before calling `start()`:
+
+```swift
+faceCapture!.language = "es"   // force Spanish
+faceCapture!.language = "en"   // force English
+faceCapture!.language = nil    // follow device locale (default)
+```
+
+| Value | Behavior |
+|-------|----------|
+| `"es"` | Displays all UI strings in Spanish |
+| `"en"` | Displays all UI strings in English |
+| `nil`  | Uses the device's current language (default) |
+
+---
+
+#### Step 6: Start component
 
 As in the application the component is declared as a local variable, it can be started in programmatically or in some event such as onClick button.
 
@@ -187,4 +205,3 @@ But you can just call the event start.
 ```swift
 faceCapture.start();
 ```
-
