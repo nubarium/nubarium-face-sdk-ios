@@ -16,8 +16,8 @@ let package = Package(
     targets: [
          .binaryTarget(
             name: "SDKFaceComponent",
-            url: "https://nubarium-sdk-ios.s3.ca-central-1.amazonaws.com/releases/ios/SDKFaceComponent/b6fba6b4-f844-4f3c-af0b-f1689d36723c/v1.0.14/SDKFaceComponent.xcframework.zip",
-            checksum: "7475c9c43aec00cb97dd432845036159f6f7896cc7c3444c482c618c1fd9c2cf"
+            url: "https://nubarium-sdk-ios.s3.ca-central-1.amazonaws.com/releases/ios/SDKFaceComponent/90e80d1b-f096-45de-baf9-e572c1050f86/v1.0.15/SDKFaceComponent.xcframework.zip",
+            checksum: "8b3836a57615a9e6c2f4423d1d7fffba322a628e0225d14f537779e398d1b0ae"
         ),
         .target(
             name: "FaceCapture",
